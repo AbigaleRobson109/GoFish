@@ -10,7 +10,7 @@ import cardgame.Card;
 
 public class CardHand {
 
-        private int handSize = 60;
+        private int handSize = 52;
 	public Card[] cards = new Card[handSize];
            //Array of Card objects
 	
@@ -29,9 +29,9 @@ public class CardHand {
                 */
                 
                 
-		for(Card.Colour s: Card.Colour.values())
+		for(Card.Suit s: Card.Suit.values())
                 {
-                    for(Card.Rank v: Card.Rank.values())
+                    for(Card.Value v: Card.Value.values())
                     {
                         //Creating objects using constructor and 
                         //assigning values of emun fields 
