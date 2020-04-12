@@ -48,6 +48,7 @@ public class GoFishApp extends Game {
             System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
             //loop to check if input is valid
             while(valid=false){
+                //player guess
                 value = in.next();
                 switch(value){
                     case "ace":
@@ -119,11 +120,12 @@ public class GoFishApp extends Game {
             if(end==true)
                 break;
 
-
+            //player 1's turn, hand is shown and player can guess a card
             System.out.println("Player 2's turn");
             System.out.println("Your Hand:");
             p2.getHand().showCards();
             System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
+            //loop to check if input is valid
             while(valid=false){
                 value = in.next();
                 switch(value){
@@ -186,8 +188,8 @@ public class GoFishApp extends Game {
                 }
             }
             valid = false;
-            gfa.play(guess, p1, p2);
-            p1.addPoint(p1, guess);
+            gfa.play(guess, p2, p1);
+            p2.addPoint(p2, guess);
             end = gfa.declareWinner(p1, p2, guess);
         }
     }
