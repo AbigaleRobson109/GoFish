@@ -59,7 +59,7 @@ public class Hand {
      * @param guess
      * @return
      */
-    public boolean search(Card.Value guess){
+    public boolean search(Card guess){
         return playersHand.contains(guess);
     }
     
