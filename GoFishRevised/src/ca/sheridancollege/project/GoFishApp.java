@@ -204,9 +204,9 @@ public class GoFishApp extends Game {
         int index;
         try {
             for(int i = 0; i < playerOther.getHand().getPlayersHand().size(); i++) {
-                valid = playerOther.getHand().search(guess);
-                if (valid) {
-                    index = playerOther.getHand().getPlayersHand().indexOf(guess);
+                valid = playerOther.getHand().search(guess.getValue());
+                if (valid==true) {
+                    index = playerOther.getHand().getPlayersHand().indexOf(guess.getValue());
                     //add card to players hand
                     playerTurn.getHand().getPlayersHand().add(playerOther.getHand().getPlayersHand().get(index));
                     //remove from players hand
