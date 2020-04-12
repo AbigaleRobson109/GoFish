@@ -59,7 +59,7 @@ public class Hand {
      * @param guess
      * @return
      */
-    public boolean search(Card guess){
+    public boolean search(Card.Value guess){
         return playersHand.contains(guess);
     }
     
@@ -76,7 +76,7 @@ public class Hand {
         System.out.println("Your current hand");
 
         for (Card card : playersHand) {
-            System.out.println(card.getSuit() + " " + card.getValue());
+            System.out.println(card.getValue() + " of " + card.getSuit());
         }
     }
 }
