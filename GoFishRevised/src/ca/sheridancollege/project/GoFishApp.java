@@ -29,6 +29,8 @@ public class GoFishApp extends Game {
         goc.setCards();
         String value = "";
         Card guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
+        boolean valid = false;
+        boolean end = false;
         
         //create players and add them to array list of Players
         Player p1 = new Player("Player 1");
@@ -37,58 +39,157 @@ public class GoFishApp extends Game {
         p1.getHand().buildHand(goc.getCards());
         p2.getHand().buildHand(goc.getCards());
         
-        
-        System.out.println("Player 1's turn");
-        System.out.println("Your Hand:");
-        p1.getHand().showCards();
-        System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
-        value = in.next();
-        
-        switch(value){
-            case "ace":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
-                break;
-            case "two":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.TWO);
-            case "three":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.THREE);
-            case "four":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.FOUR);
-            case "five":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.FIVE);
-            case "six":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.SIX);
-            case "seven":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.SEVEN);
-            case "eight":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.EIGHT);
-            case "nine":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.NINE);
-            case "ten":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.TEN);
-            case "jack":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.JACK);
-            case "queen":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.QUEEN);
-            case "king":
-                guess = new Card(Card.Suit.CLUBS, Card.Value.KING);
-        }
-                
-        
-        
-        
-        gfa.play(guess, p1, p2);
-        p1.addPoint(p1, guess);
-        gfa.declareWinner(p1, p2, guess);
-        
-        
-        
+        //loop for the game, the loop will continue playing each player's turn until the end boolean is true
+        while(end==false){
+            //player 1's turn, hand is shown and player can guess a card
+            System.out.println("Player 1's turn");
+            System.out.println("Your Hand:");
+            p1.getHand().showCards();
+            System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
+            //loop to check if input is valid
+            while(valid=false){
+                value = in.next();
+                switch(value){
+                    case "ace":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
+                        valid = true;
+                        break;
+                    case "two":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.TWO);
+                        valid = true;
+                        break;
+                    case "three":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.THREE);
+                        valid = true;
+                        break;
+                    case "four":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.FOUR);
+                        valid = true;
+                        break;
+                    case "five":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.FIVE);
+                        valid = true;
+                        break;
+                    case "six":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.SIX);
+                        valid = true;
+                        break;
+                    case "seven":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.SEVEN);
+                        valid = true;
+                        break;
+                    case "eight":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.EIGHT);
+                        valid = true;
+                        break;
+                    case "nine":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.NINE);
+                        valid = true;
+                        break;
+                    case "ten":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.TEN);
+                        valid = true;
+                        break;
+                    case "jack":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.JACK);
+                        valid = true;
+                        break;
+                    case "queen":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.QUEEN);
+                        valid = true;
+                        break;
+                    case "king":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.KING);
+                        valid = true;
+                        break;
+                    default:
+                        System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
+                        valid = false;
+                        break;
+                }
+            }
+            
+            
+            
+            valid = false;
+            gfa.play(guess, p1, p2);
+            p1.addPoint(p1, guess);
+            end = gfa.declareWinner(p1, p2, guess);
 
-        System.out.println("Player 1's turn");
-        System.out.println("Your Hand:");
-        p1.getHand().showCards();
-        System.out.println("Guess card value: ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING");
-        value = in.next();
+            if(end==true)
+                break;
+
+
+            System.out.println("Player 2's turn");
+            System.out.println("Your Hand:");
+            p2.getHand().showCards();
+            System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
+            while(valid=false){
+                value = in.next();
+                switch(value){
+                    case "ace":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
+                        valid = true;
+                        break;
+                    case "two":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.TWO);
+                        valid = true;
+                        break;
+                    case "three":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.THREE);
+                        valid = true;
+                        break;
+                    case "four":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.FOUR);
+                        valid = true;
+                        break;
+                    case "five":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.FIVE);
+                        valid = true;
+                        break;
+                    case "six":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.SIX);
+                        valid = true;
+                        break;
+                    case "seven":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.SEVEN);
+                        valid = true;
+                        break;
+                    case "eight":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.EIGHT);
+                        valid = true;
+                        break;
+                    case "nine":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.NINE);
+                        valid = true;
+                        break;
+                    case "ten":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.TEN);
+                        valid = true;
+                        break;
+                    case "jack":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.JACK);
+                        valid = true;
+                        break;
+                    case "queen":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.QUEEN);
+                        valid = true;
+                        break;
+                    case "king":
+                        guess = new Card(Card.Suit.CLUBS, Card.Value.KING);
+                        valid = true;
+                        break;
+                    default:
+                        System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
+                        valid = false;
+                        break;
+                }
+            }
+            valid = false;
+            gfa.play(guess, p1, p2);
+            p1.addPoint(p1, guess);
+            end = gfa.declareWinner(p1, p2, guess);
+        }
     }
 
     public GoFishApp(String gameName, String name) {
@@ -121,7 +222,7 @@ public class GoFishApp extends Game {
     }
 
     @Override
-    public void declareWinner(Player playerOne, Player playerTwo, Card guess) {
+    public boolean declareWinner(Player playerOne, Player playerTwo, Card guess) {
 
         if (playerOne.getHand().getPlayersHand().isEmpty()) {
             if (goc.getCards().isEmpty()) {
@@ -129,15 +230,20 @@ public class GoFishApp extends Game {
                 int p2Points = playerTwo.getPoints();
                 if (p1Points > p2Points) {
                     System.out.println(playerOne.getPlayerID() + " is the winner");
+                    return true;
                 } else if(p1Points < p2Points) {
                     System.out.println(playerTwo.getPlayerID() + " is the Winner");
+                    return true;
                 }
                 else{
                     System.out.println("It's a tie");
+                    return true;
                 }
             } else {
                 playerOne.getHand().drawFive(goc.getCards());
+                return false;
             }
         }
+        return false;
     }
 }
