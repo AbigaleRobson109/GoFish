@@ -10,6 +10,7 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -24,25 +25,70 @@ public class GoFishApp extends Game {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         goc.setCards();
+        String value = "";
+        Card guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
+        
         //create players and add them to array list of Players
         Player p1 = new Player("Player 1");
         Player p2 = new Player("Player 2");
         //create hands
         p1.getHand().buildHand(goc.getCards());
         p2.getHand().buildHand(goc.getCards());
-
-        //show players 1 hand
+        
+        
+        System.out.println("Player 1's turn");
+        System.out.println("Your Hand:");
         p1.getHand().showCards();
-        p2.getHand().showCards();
-        //ask for guess
-        Card guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
-        //play method
+        System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
+        value = in.next();
+        
+        switch(value){
+            case "ace":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
+                break;
+            case "two":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.TWO);
+            case "three":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.THREE);
+            case "four":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.FOUR);
+            case "five":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.FIVE);
+            case "six":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.SIX);
+            case "seven":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.SEVEN);
+            case "eight":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.EIGHT);
+            case "nine":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.NINE);
+            case "ten":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.TEN);
+            case "jack":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.JACK);
+            case "queen":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.QUEEN);
+            case "king":
+                guess = new Card(Card.Suit.CLUBS, Card.Value.KING);
+        }
+                
+        
+        
+        
         gfa.play(guess, p1, p2);
-        //get point method
         p1.addPoint(p1, guess);
-        //declarewWinner
         gfa.declareWinner(p1, p2, guess);
+        
+        
+        
+
+        System.out.println("Player 1's turn");
+        System.out.println("Your Hand:");
+        p1.getHand().showCards();
+        System.out.println("Guess card value: ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING");
+        value = in.next();
     }
 
     public GoFishApp(String gameName, String name) {
@@ -64,6 +110,7 @@ public class GoFishApp extends Game {
                     playerOther.getHand().getPlayersHand().remove(guess);
                 } else {
                     playerTurn.getHand().draw(goc.getCards());
+                    System.out.println("Go Fish");
                     break;
                 }
             }
