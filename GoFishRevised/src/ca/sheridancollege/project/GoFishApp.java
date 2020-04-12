@@ -1,118 +1,14 @@
 /*
-        Name:  Abigale Robson
-        Assignment:  [assignment name]
+        Name:  Abigale Robson, David Klatt, Ostap 
+        Assignment:  Go Fish
         Program: PROG24178
-        Date:  [assignment due date here]
+        Date: April 16, 2020
     
         Description:
-        [program description in your own words]
+        Main application to run go fish game and get user input to play
  */
-//loop to check if input is valid
-//            while(valid==false){
-//                //player guess
-//                value = in.next();
-//                switch(value){
-//                    case "ace":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.ACE);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.ACE);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.ACE);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.ACE);
-//                        valid = true;
-//                        break;
-//                    case "two":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.TWO);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.TWO);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.TWO);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.TWO);
-//                        valid = true;
-//                        break;
-//                    case "three":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.THREE);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.THREE);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.THREE);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.THREE);
-//                        valid = true;
-//                        break;
-//                    case "four":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.FOUR);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.FOUR);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.FOUR);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.FOUR);
-//                        valid = true;
-//                        break;
-//                    case "five":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.FIVE);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.FIVE);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.FIVE);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.FIVE);
-//                        valid = true;
-//                        break;
-//                    case "six":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.SIX);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.SIX);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.SIX);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.SIX);
-//                        valid = true;
-//                        break;
-//                    case "seven":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.SEVEN);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.SEVEN);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.SEVEN);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.SEVEN);
-//                        valid = true;
-//                        break;
-//                    case "eight":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.EIGHT);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.EIGHT);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.EIGHT);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.EIGHT);
-//                        valid = true;
-//                        break;
-//                    case "nine":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.NINE);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.NINE);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.NINE);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.NINE);
-//                        valid = true;
-//                        break;
-//                    case "ten":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.TEN);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.TEN);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.TEN);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.TEN);
-//                        valid = true;
-//                        break;
-//                    case "jack":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.JACK);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.JACK);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.JACK);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.JACK);
-//                        valid = true;
-//                        break;
-//                    case "queen":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.QUEEN);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.QUEEN);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.QUEEN);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.QUEEN);
-//                        valid = true;
-//                        break;
-//                    case "king":
-//                        guessclub = new Card(Card.Suit.CLUBS, Card.Value.KING);
-//                        guessheart = new Card(Card.Suit.HEARTS, Card.Value.KING);
-//                        guessspade = new Card(Card.Suit.SPADES, Card.Value.KING);
-//                        guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.KING);
-//                        valid = true;
-//                        break;
-//                    default:
-//                        System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
-//                        valid = false;
-//                        break;
-//                }
-//            }
-            
 package ca.sheridancollege.project;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -121,114 +17,62 @@ import java.util.Scanner;
  */
 public class GoFishApp extends Game {
 
-    private static GroupOfCards goc = GroupOfCards.getInstance();
-    private static GoFishApp gfa = new GoFishApp("Go Fish", "Players");
+    private static final GroupOfCards goc = GroupOfCards.getInstance();
+    private static final GoFishApp gfa = new GoFishApp("Go Fish", "Players");
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+
         goc.setCards();
-        String ans = "";
-        Card.Suit suit;
-        Card.Value value;
-        Card guess = new Card(Card.Suit.CLUBS, Card.Value.ACE);
-//        Card guessclub = new Card(Card.Suit.CLUBS, Card.Value.ACE);
-//        Card guessheart = new Card(Card.Suit.HEARTS, Card.Value.ACE);
-//        Card guessspade = new Card(Card.Suit.SPADES, Card.Value.ACE);
-//        Card guessdiamond = new Card(Card.Suit.DIAMONDS, Card.Value.ACE);
-        boolean valid = false;
-        boolean end = false;
-        
         //create players and add them to array list of Players
         Player p1 = new Player("Player 1");
         Player p2 = new Player("Player 2");
+        boolean end = false;
         //create hands
         p1.getHand().buildHand(goc.getCards());
         p2.getHand().buildHand(goc.getCards());
-        
-        //loop for the game, the loop will continue playing each player's turn until the end boolean is true
-        while(end==false){
-            //player 1's turn, hand is shown and player can guess a card
-            System.out.println("Player 1's turn");
+
+        while (!end) {
+            //ask for guess
+            System.out.println("Player one Turn");
+            //show players 1 hand
             p1.getHand().showCards();
-            System.out.println("Guess card value: ");
-            
-            while(valid==false){
-                ans = in.next().toUpperCase();
-                if(ans.equals("ACE")||ans.equals("TWO")||ans.equals("THREE")||ans.equals("FOUR")||ans.equals("FIVE")||ans.equals("SIX")||
-                        ans.equals("SEVEN")||ans.equals("EIGHT")||ans.equals("NINE")||ans.equals("TEN")||ans.equals("JACK")||
-                        ans.equals("QUEEN")||ans.equals("KING")){
-                    valid = true;
-                }else {
-                    System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
-                    valid = false;
-                }
-            }
-            value = Card.Value.valueOf(ans);
-            valid = false;
-            
-            System.out.println("Guess card suit: ");
-            while(valid==false){
-                ans = in.next().toUpperCase();
-                if(ans.equals("CLUBS")||ans.equals("HEARTS")||ans.equals("SPADES")||ans.equals("DIAMONDS")){
-                    valid = true;
-                }else{
-                    System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
-                    valid = false;
-                }
-            }
-            suit = Card.Suit.valueOf(ans);
-            valid = false;
-            
-            
-            guess = new Card(suit, value);
-            gfa.play(guess, p1, p2);
-            p1.addPoint(p1, guess);
-            end = gfa.declareWinner(p1, p2, guess);
+            //create card guess
 
-            if(end==true)
-                break;
-            
+            String value = getValue();
+            //play method
+            gfa.play(value, p1, p2);
+            //get point method
+             p1.addPoint(p1, value);
+            //declarewWinner
+            gfa.declareWinner(p1, p2, value);
 
-            //player 2's turn, hand is shown and player can guess a card
-            System.out.println("Player 2's turn");
+            //player 2 turn
+            System.out.println("Player 2 turn");
             p2.getHand().showCards();
-            System.out.println("Guess card value:");
-            //loop to check if input is valid
-            while(valid==false){
-                ans = in.next().toUpperCase();
-                if(ans.equals("ACE")||ans.equals("TWO")||ans.equals("THREE")||ans.equals("FOUR")||ans.equals("FIVE")||ans.equals("SIX")||
-                        ans.equals("SEVEN")||ans.equals("EIGHT")||ans.equals("NINE")||ans.equals("TEN")||ans.equals("JACK")||
-                        ans.equals("QUEEN")||ans.equals("KING")){
-                    valid = true;
-                }else {
-                    System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
-                    valid = false;
-                }
-            }
-            value = Card.Value.valueOf(ans);
-            valid = false;
-            
-            System.out.println("Guess card suit: ");
-            while(valid==false){
-                ans = in.next().toUpperCase();
-                if(ans.equals("CLUBS")||ans.equals("HEARTS")||ans.equals("SPADES")||ans.equals("DIAMONDS")){
-                    valid = true;
-                }else{
-                    System.out.println("Guess invalid, try again. Make sure there are no spaces and all letters are lower case");
-                    valid = false;
-                }
-            }
-            suit = Card.Suit.valueOf(ans);
-            valid = false;
-            
-            guess = new Card(suit, value);
-            gfa.play(guess, p2, p1);
-            p2.addPoint(p2, guess);
-            end = gfa.declareWinner(p1, p2, guess);
+            value = getValue();
+            gfa.play(value, p2, p1);
+
         }
+    }
+
+    public static String getValue() {
+        System.out.println("Enter the card value");
+        Scanner in = new Scanner(System.in);
+        String suit;
+        suit = in.next().toUpperCase();
+        if (suit.equals("ACE") || suit.equals("TWO") || suit.equals("THREE")
+                || suit.equals("FOUR") || suit.equals("FIVE") || suit.equals("SIX")
+                || suit.equals("SEVEN") || suit.equals("EIGHT") || suit.equals("NINE")
+                || suit.equals("TEN") || suit.equals("JACK") || suit.equals("QUEEN")
+                || suit.equals("KING")) {
+        } else {
+            System.out.println("Guess invalid, try again.");
+            suit = getValue();
+        }
+        return suit;
     }
 
     public GoFishApp(String gameName, String name) {
@@ -236,23 +80,21 @@ public class GoFishApp extends Game {
     }
 
     @Override
-    public void play(Card guess, Player playerTurn, Player playerOther) {
-        boolean valid;
+    public void play(String guess, Player playerTurn, Player playerOther) {
         int index;
         try {
-            for(int i = 0; i < playerOther.getHand().getPlayersHand().size(); i++) {
-                valid = playerOther.getHand().search(guess);
-                if (valid) {
-                    index = playerOther.getHand().getPlayersHand().indexOf(guess);
-                    //add card to players hand
-                    playerTurn.getHand().getPlayersHand().add(playerOther.getHand().getPlayersHand().get(index));
-                    //remove from players hand
-                    playerOther.getHand().getPlayersHand().remove(guess);
-                } else {
-                    playerTurn.getHand().draw(goc.getCards());
-                    System.out.println("Go Fish");
-                    break;
-                }
+            index = playerOther.getHand().search(guess);
+            if (index != -1) {
+                System.out.println("You guessed it!");
+                System.out.println(index);
+//              //add card to players hand
+              playerTurn.getHand().getPlayersHand().add(playerOther.getHand().getPlayersHand().get(index));
+//              //remove from players hand
+              playerOther.getHand().getPlayersHand().remove(index);
+            } else {
+                playerTurn.getHand().draw(goc.getCards());
+                System.out.println("Go Fish");
+
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -261,7 +103,7 @@ public class GoFishApp extends Game {
     }
 
     @Override
-    public boolean declareWinner(Player playerOne, Player playerTwo, Card guess) {
+    public void declareWinner(Player playerOne, Player playerTwo, String guess) {
 
         if (playerOne.getHand().getPlayersHand().isEmpty()) {
             if (goc.getCards().isEmpty()) {
@@ -269,20 +111,14 @@ public class GoFishApp extends Game {
                 int p2Points = playerTwo.getPoints();
                 if (p1Points > p2Points) {
                     System.out.println(playerOne.getPlayerID() + " is the winner");
-                    return true;
-                } else if(p1Points < p2Points) {
+                } else if (p1Points < p2Points) {
                     System.out.println(playerTwo.getPlayerID() + " is the Winner");
-                    return true;
-                }
-                else{
+                } else {
                     System.out.println("It's a tie");
-                    return true;
                 }
             } else {
                 playerOne.getHand().drawFive(goc.getCards());
-                return false;
             }
         }
-        return false;
     }
 }
