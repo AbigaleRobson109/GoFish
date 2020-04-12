@@ -47,7 +47,7 @@ public class GoFishApp extends Game {
             p1.getHand().showCards();
             System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
             //loop to check if input is valid
-            while(valid=false){
+            while(valid==false){
                 //player guess
                 value = in.next();
                 switch(value){
@@ -126,7 +126,7 @@ public class GoFishApp extends Game {
             p2.getHand().showCards();
             System.out.println("Guess card value: ace, two, three, four, five, six, seven, eight, nine, ten, jack, queen, king");
             //loop to check if input is valid
-            while(valid=false){
+            while(valid==false){
                 value = in.next();
                 switch(value){
                     case "ace":
