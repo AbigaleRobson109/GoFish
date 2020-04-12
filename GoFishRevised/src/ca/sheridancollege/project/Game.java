@@ -55,5 +55,5 @@ public abstract class Game extends Player{
      * When the game is over, use this method to declare and display a winning
      * player.
      */
-    public abstract void declareWinner(Player playerOne, Player playerTwo ,Card guess);
+    public abstract boolean declareWinner(Player playerOne, Player playerTwo ,Card guess);
 }//end class
