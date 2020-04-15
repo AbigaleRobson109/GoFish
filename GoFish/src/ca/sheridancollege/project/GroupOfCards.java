@@ -9,49 +9,48 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * A concrete class that represents any grouping of cards for a Game.
- * HINT, you might want to subclass this more than once.
- * The group of cards has a maximum size attribute which is flexible for reuse.
+ * A concrete class that represents any grouping of cards for a Game. HINT, you
+ * might want to subclass this more than once. The group of cards has a maximum
+ * size attribute which is flexible for reuse.
+ *
  * @author dancye
  */
-public class GroupOfCards 
-{
-   
+public class GroupOfCards {
+
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
-    private int size;//the size of the grouping
-    
-    public GroupOfCards(int givenSize)
-    {
-        size = givenSize;
-    }
-    
+    private static GroupOfCards onlyObject = null;
+    private ArrayList<Card> cards;
     /**
-     * A method that will get the group of cards as an ArrayList
-     * @return the group of cards.
+     * Default Constructor
      */
-    public ArrayList<Card> showCards()
-    {
+    private GroupOfCards() {
+        cards = new ArrayList<Card>();
+    }
+    /**
+     * Return the value of the card with suit and rank
+     * @return
+     */
+    public ArrayList<Card> getCards() {
         return cards;
     }
-    
-    public void shuffle()
-    {
-        Collections.shuffle(cards);
+
+    public void setCards() {
+         for (Card.Suit c : Card.Suit.values()) {
+            for (Card.Value v : Card.Value.values()) {
+                cards.add(new Card(c, v));
+            }
+        }
     }
 
     /**
-     * @return the size of the group of cards
+     * Method that creates the group of cards as an ArrayList
+     * @return 
      */
-    public int getSize() {
-        return size;
+    public static GroupOfCards getInstance(){
+        if (onlyObject == null) {
+            onlyObject = new GroupOfCards();
+        }
+        return onlyObject;
     }
 
-    /**
-     * @param givenSize the max size for the group of cards
-     */
-    public void setSize(int givenSize) {
-        size = givenSize;
-    }
-    
 }//end class

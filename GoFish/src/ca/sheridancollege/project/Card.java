@@ -7,20 +7,61 @@ package ca.sheridancollege.project;
 
 /**
  * A class to be used as the base Card class for the project. Must be general
- * enough to be instantiated for any Card game. Students wishing to add to the code 
- * should remember to add themselves as a modifier.
+ * enough to be instantiated for any Card game. Students wishing to add to the
+ * code should remember to add themselves as a modifier.
+ *
  * @author dancye, 2018
  */
-public abstract class Card 
-{
-    //default modifier for child classes
+public class Card {
+
+    public enum Suit {
+        HEARTS, SPADES, CLUBS, DIAMONDS
+    };
+
+    public enum Value {
+        ACE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, JACK,
+        QUEEN, KING
+    };
+    private final Suit suit;
+    private final Value value;
     
     /**
-     * Students should implement this method for their specific children classes 
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
+     * Set values of suit and value constructor
+     *
+     * @param c
+     * @param v
      */
-    
+    public Card(Suit c, Value v) {
+        suit = c;
+        value = v;
+    }
+
+    /**
+     * Get the value of specified Value
+     *
+     * @return
+     */
+    public Value getValue() {
+        return this.value;
+    }
+
+    /**
+     * Get the value of specified suit
+     *
+     * @return
+     */
+    public Suit getSuit() {
+        return this.suit;
+    }
+
+    /**
+     * String format to display suit and value
+     *
+     * @return
+     */
     @Override
-    public abstract String toString();
-    
+    public String toString() {
+        return suit.name() + " " + value.name();
+    }
+
 }
